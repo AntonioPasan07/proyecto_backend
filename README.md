@@ -80,13 +80,20 @@ Expresión: router.get('/eventos/nombre')
 
 //localhost:4000/eventos/:nombre
 
-10.Retorna los campos estado_invitacion, fecha_invitacion de todas las invitaciones.
+ 10.parametro : nombre (nombre)
+modificar campos nombre_evento,fecha_evento ,direccion ,descripcion
+router.put('/eventos/nombre')
+
+
+//localhost:4000/eventos/:nombre
+
+11.Retorna los campos estado_invitacion, fecha_invitacion de todas las invitaciones.
 Expresión: router.get('/invitaciones')
 
 //localhost:4000/invitaciones
 
 body( evento, estado_invitacion, fecha_invitacion, nombre_invitado)
-11.Parámetros: id_evento, estado_invitacion, fecha_invitacion, id_usuario_invitado
+12.Parámetros: id_evento, estado_invitacion, fecha_invitacion, id_usuario_invitado
 Crea una nueva invitación asociada a un evento y un usuario. El id_evento corresponde al nombre del evento que se pasa como parámetro y debe coincidir con el id del evento en la base de datos. El id_usuario_invitado debe corresponder al id del usuario en la base de datos.
 Expresión: router.post('/invitaciones/new')
 
