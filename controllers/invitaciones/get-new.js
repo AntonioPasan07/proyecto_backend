@@ -1,5 +1,5 @@
 const queries = require('../../models/invitaciones')
-
+const error = require('../../misc/errors')
 module.exports = (db)=> async (req, res, next) => {
     
     const dbRes = await queries.newInvitado(await db)(req.body)

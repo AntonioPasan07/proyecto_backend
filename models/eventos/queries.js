@@ -14,10 +14,20 @@ FROM invitaciones i
 INNER JOIN eventos e ON i.id_evento = e.id
 WHERE (SELECT id FROM usuarios WHERE Nombre = ${nombre}) = i.id_usuario_invitado`
 
+const updateEvento = (eventoId, evento, usuarioId) => sql.unsafe`
+  UPDATE eventos
+  SET nombre_evento = ${evento.nombre_evento},
+      fecha_evento = ${evento.fecha_evento},
+      direccion = ${evento.direccion},
+      descripcion = ${evento.descripcion},
+      id_usuario_creador = ${usuarioId}
+  WHERE id = ${eventoId}`
+
 module.exports = {
     selectAllEventos,
     newEvento,
     selectInvitado,
+    updateEvento,
 
 
 }

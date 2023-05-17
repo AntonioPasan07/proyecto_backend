@@ -1,4 +1,4 @@
-const {selectAllEventos, newEvento, selectInvitado} = require('./queries')
+const {selectAllEventos, newEvento, selectInvitado,updateEvento} = require('./queries')
 const { v4: uuidv4 } = require("uuid")
 
 
@@ -53,9 +53,30 @@ const selectNewEvento = (db) => async (evento) => {
     }
 }
 
+const selecUpDateEvento = (db) => async (evento) => {
+    try {
+        console.log (evento)
+        const eventoId = uuidv4()
+        const usuarioId = uuidv4()
+        const response = await db.query(updateEvento(eventoId,usuarioId,evento));
+     console.log(response)
+        return {
+            ok: true,
+            response: response.rows
+        }
+    } catch(error) {
+        return {
+            ok: false,
+            message: error.message,
+        }
+    }
+}
+
+
 
 module.exports = {
     selectAll,
     selectNewEvento,
     selectInvitacionesUsuario,
+    selecUpDateEvento,
 }
