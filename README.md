@@ -85,7 +85,7 @@ modificar campos nombre_evento,fecha_evento ,direccion ,descripcion
 router.put('/eventos/nombre')
 
 
-//localhost:4000/eventos/:nombre
+//localhost:4000/eventos/new/:nombre
 
 11.Retorna los campos estado_invitacion, fecha_invitacion de todas las invitaciones.
 Expresión: router.get('/invitaciones')
